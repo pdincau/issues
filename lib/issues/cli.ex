@@ -3,7 +3,10 @@ defmodule Issues.CLI do
   def parse_args(argv) do
     parse = OptionParser.parse(argv, switches: [help: :boolean], aliases: [h: :help])
     case parse do
-      {[help: true], _, _} -> :help
+      {[help: true], _, _} ->
+        :help
+      {_, [ user, project, count ], _} ->
+        {user, project, String.to_integer(count)}
     end
   end
 end
