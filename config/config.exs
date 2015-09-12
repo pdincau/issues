@@ -23,5 +23,5 @@ use Mix.Config
 #
 #     import_config "#{Mix.env}.exs"
 
-      config: issues,
+      config :issues,
         github_url: "https://api.github.com"
